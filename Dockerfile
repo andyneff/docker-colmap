@@ -1,5 +1,5 @@
-# FROM nvidia/cuda:9.0-devel-ubuntu16.04 as colmap
-FROM nvidia/cuda:10.1-devel-ubuntu18.04 as colmap
+FROM nvidia/cuda:9.0-devel-ubuntu16.04 as colmap
+# FROM nvidia/cuda:10.1-devel-ubuntu18.04 as colmap
 
 SHELL ["/usr/bin/env", "bash", "-euxvc"]
 
