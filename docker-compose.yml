@@ -1,0 +1,14 @@
+version: "2.4"
+
+services:
+  colmap:
+    build:
+      context: .
+      args:
+        DSM_CUDA_ARCHS: 3.0 6.1
+    image: colmap
+    runtime: nvidia
+    volumes:
+      - type: bind
+        target: /data
+        source: ./data
