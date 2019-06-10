@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        DSM_CUDA_ARCHS: 3.0 6.1
+        DSM_CUDA_ARCHS: ${DSM_CUDA_ARCHS-Auto}
     image: colmap
     runtime: nvidia
     volumes:
