@@ -8,11 +8,11 @@ services:
         DSM_CUDA_ARCHS: ${DSM_CUDA_ARCHS-Auto}
     image: colmap
     runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=1,2
+#    environment:
+#      - NVIDIA_VISIBLE_DEVICES=1,2
     volumes:
       - type: bind
         target: /data
         source: ./data
 
-    command: colmap feature_extractor --database_path /tmp/data3.db --image_path /data/gerrard-hall/images/
+    command: bash -c "colmap feature_extractor --database_path /tmp/data3.db --image_path /data/gerrard-hall/images/ && colmap exhaustive_matcher --database_path /tmp/data3.db"
